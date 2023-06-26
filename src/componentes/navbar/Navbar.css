@@ -1,0 +1,27 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+.navbar-brand{
+    font: bold;
+    font-size: 50px;
+}
+
+.navbar.navbar-expand-lg{
+    background-color: #cc0422f0 ;
+    z-index: 9999; /* Valor alto de z-index para asegurar que el nav esté por encima de otros elementos */
+    position: fixed;
+    width: 100%;
+}
+
+.nav-link{
+    font-size: 25px;
+}
+
+.btn{
+    font-size: 18px;
+}   

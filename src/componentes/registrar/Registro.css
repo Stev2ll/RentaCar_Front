@@ -1,0 +1,9 @@
+.Formulario{
+    position: relative;
+    top: 100px;
+    left: 350px;
+    align-items: center;
+    background-color: aqua;
+    text-align: center;
+    width: 500px;
+}

@@ -1,0 +1,53 @@
+.login-container {
+    position: relative;
+    top: 150px;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  .contenedor-logo{
+    position: relative;
+    left: 90px;
+  }
+  .LogoL{
+    width: 150px;
+    margin: 0;
+    left: 10px;
+  }
+  h2 {
+    text-align: center;
+  }
+  
+  .form-login-login{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group-login {
+    margin-bottom: 10px;
+  }
+  
+  .label-login {
+    font-weight: bold;
+  }
+  
+  .input-login {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .forgot-password {
+    text-align: center;
+    color: #007bff;
+    cursor: pointer;
+  }
+  .button-login {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
