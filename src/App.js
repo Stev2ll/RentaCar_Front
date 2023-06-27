@@ -16,7 +16,7 @@ function App() {
         <Route path='/registro' element = {<Registro/>}/>
         <Route path='/vehiculos' element= {<Vehiculos/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/vehiculos/:id' element={<Vehiculo/>}/>
+        <Route path='/vehiculos/:id_auto' element={<Vehiculo/>}/>
       </Routes>
     </>
   );

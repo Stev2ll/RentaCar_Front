@@ -104,7 +104,7 @@ export default function Registro() {
                     <label className='form-label'>Masculino</label>
                     <input type="radio" name="opciones1" value="Masculino" id="opcion1" />
                     <label className='form-label'>Femenino</label>
-                    <input type="radio" name="opciones2" value="Femenino" id="opcion2" />
+                    <input type="radio" name="opciones1" value="Femenino" id="opcion2" />
                 </div>
                 <div>
                     <label htmlFor="archivo">Selecciona un archivo:</label>

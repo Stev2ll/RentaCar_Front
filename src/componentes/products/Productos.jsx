@@ -18,6 +18,7 @@ export default function Productos() {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [tempId , setTempId] = useState();
 
     useEffect(() => {
         let componentMounted = true;
@@ -67,7 +68,7 @@ export default function Productos() {
                 </div>
                         <>
                             {filter.map((autos) => {
-                                const imageKey = `img${autos.id_auto}`; // Utiliza la misma clave que tienes en el objeto `images`
+                                const imageKey = `img${autos.id_auto}`; 
                                 const imageSrc = images[imageKey];
 
                                 return (
@@ -78,7 +79,10 @@ export default function Productos() {
                                                 <h5 width="10" className="card-title mb-0">{autos.marca.substring(0, 12)}</h5>
                                                 <h5 className="card-title">{autos.modelo}</h5>
                                                 <p className="card-textlead fw-bold">${autos.precio}</p>
-                                                <Link to={`/vehiculos/${autos.id_auto}`} className="btn btn-outline-dark">Ver detalles</Link>
+                                                
+                                                <Link to={`/vehiculos/${autos.id_auto}`} >
+                                                    <button className="btn btn-outline-dark">  Ver detalles</button>
+                                                  </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -94,7 +98,7 @@ export default function Productos() {
             <div className="containerp py-5">
                 <div className="row">
                     <div className="col-12 mb-5">
-                        <h1 className="display-6 fw-bolder text-center">TODOS LOS VEHÍCULOS Link TU ALCANCE</h1>
+                        <h1 className="display-6 fw-bolder text-center">TODOS LOS VEHÍCULOS ATU ALCANCE</h1>
                         <hr />
                     </div>
                 </div>
