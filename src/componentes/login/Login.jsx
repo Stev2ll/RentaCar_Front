@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../login/Login.css'
 import Logo from '../login/Logo.png'
+import { Link } from 'react-router-dom';
 export default function Login() {
 
     const [email, setEmail] = useState('');
@@ -58,9 +59,10 @@ export default function Login() {
                     </p>
                 ) : (
                     <div className="form-group">
-                        <label className='label-login' htmlFor="email-forgot">Correo electrónico:</label>
                         <input  className='input-login' type="email" id="email-forgot" />
-                        <button className='button-login' onClick={handleForgotPassword}>Recuperar contraseña</button>
+                        {/* <button className='button-login' onClick={handleForgotPassword}>Recuperar contraseña</button> */}
+
+                            <Link to={"/recuperar"}className='button-login' >Recuperar contraseña</Link>
                     </div>
                 )}
             </form>
