@@ -220,6 +220,16 @@ export const verificarCedula = (cedulaP) => {
     return true;
 };
 
+export const verificarExtensionFoto = (foto) => {
+    const extensionesValidas = ['jpg', 'jpeg', 'png', 'gif'];
 
+    const extension = foto.split('.').pop().toLowerCase();
+
+    if (extensionesValidas.includes(extension)) {
+        return true;
+    }
+    
+    return false;
+};
 
 

@@ -7,7 +7,8 @@ import {
     verificarCedula,
     verificarContrasena,
     verificarCorreo,
-    validarFechasLicencia
+    validarFechasLicencia,
+    verificarExtensionFoto
 } from '../../hooks/rulesRegistro';
 import Swal from 'sweetalert2';
 
@@ -18,6 +19,7 @@ const Registro = () => {
     const [genero, setGenero] = useState('');
     const [correo, setCorreo] = useState('');
     const [contrasena, setContrasena] = useState('');
+    const [foto, setFoto] = useState('');
     const [fechaEmision, setFechaEmision] = useState('');
     const [fechaCaducidad, setFechaCaducidad] = useState('');
     const [error, setError] = useState('');
@@ -59,17 +61,37 @@ const Registro = () => {
             setError('Fechas de licencia inválidas');
             return;
         }
+        if (!verificarExtensionFoto(foto))
+        {
+            setError('Formato no permitido');
+            return;
+        }
         setError('');
+
+        // Capturar los datos y mostrarlos en la consola
+        const datos = {
+            nombre,
+            apellido,
+            cedula,
+            genero,
+            correo,
+            contrasena,
+            foto,
+            fechaEmision,
+            fechaCaducidad
+        };
+        console.log(datos);
+
     };
     //funcion confirmar
-    const Confirmar= () =>{
+    const Confirmar = () => {
         Swal.fire({
             title: 'Confirmar',
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: 'Registar',
             denyButtonText: `Cancelar`,
-          }).then((result) => {
+        }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 Swal.fire({
@@ -78,11 +100,11 @@ const Registro = () => {
                     title: 'Se ha registrado correctamente',
                     showConfirmButton: false,
                     timer: 1500
-                  })
+                })
             } else if (result.isDenied) {
-              Swal.fire('Changes are not saved', '', 'info')
+                Swal.fire('Changes are not saved', '', 'info')
             }
-          })
+        })
     }
 
     return (
@@ -127,7 +149,7 @@ const Registro = () => {
 
                 <div>
                     <label htmlFor="foto">Foto de perfil</label>
-                    <input type="file" name="foto" accept=".jpg, .jpeg, .png" />
+                    <input type="file" name="foto" value={foto} onChange={(e) => setFoto(e.target.value)} />
                     {error === 'Extensión de foto inválida' && <div className="alert alert-danger p-1">{error}</div>}
                 </div>
                 <div className="licencia">
